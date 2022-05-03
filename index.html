@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Clarusway Survey Form</title>
+</head>
+<body>
+    <header>
+        <h1>Clarusway Survey Form</h1>
+        <p>Thank you for taking the time to help us improve the platform</p>
+    </header>
+    <section>
+        <form id="survey-form" action="./result.html" method="get">
+            <div>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" placeholder="Enter your name..."><br>
+                <label for="surname">Surname</label><br>
+                <input type="text" id="surname" placeholder="Enter your surname..."><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" placeholder="user@clarusway.com">
+            </div>
+            <div>
+
+                <p>Which option best describes your current role?</p>
+                <select name="" id="">
+                    <option value="" disabled selected>Select current role</option>
+                    <option value="">Student</option>
+                    <option value="">Teacher</option>
+                    <option value="">Full Time Job</option>
+                    <option value="">Part Time Job</option>
+                    <option value="">Full Time Learner</option>
+                    <option value="">Prefer not to say</option>
+                </select>
+            </div>
+            <div>
+                <p>Would you recommend Clarusway to a friend?</p>
+                <input type="radio">
+                <label for="">Definitely, Yes</label><br>
+                <input type="radio">
+                <label for="">May be</label><br>
+                <input type="radio">
+                <label for="">Not sure</label><br>
+                <input type="radio">
+                <label for="">Definitely, No</label>
+
+            </div>
+            <div>
+                <p>What is your favourite feature of Clarusway?</p>
+                <select name="" id="">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="">Courses</option>
+                    <option value="">Projects</option>
+                    <option value="">Community</option>
+                    <option value="">Mentors</option>
+                </select>
+
+            </div>
+            <div>
+                <p>What would you like to see  improved?(Check all that apply)</p>
+                <input type="checkbox">
+                <label for="">Front-End Projects</label><br>
+                <input type="checkbox">
+                <label for="">Back-End Projects</label><br>
+                <input type="checkbox">
+                <label for="">Data Science</label><br>
+                <input type="checkbox">
+                <label for="">Additional Courses</label>
+            </div>
+            <div>
+                <p>Any comments or suggestions?</p>
+                <textarea name="" id=""placeholder="Enter your comment here. Thanks for your comments..."></textarea>
+            </div>
+
+            <button type="submit">Send</button>
+
+        </form>
+    </section>
+    <script>
+        const resultList = document.getElementById("results");
+      new URLSearchParams(window.location.search).forEach((value, name) => {
+        resultList.append(`${name}: ${value}`);
+        resultList.append(document.createElement("br"));
+      });
+    </script>
+</body>
+</html>
